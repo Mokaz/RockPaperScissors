@@ -13,14 +13,36 @@
             return choices[~~(Math.random() * choices.length)];
         }
         function playRound(playerSelection, computerSelection) {
-            //Rock
+            let ps = playerSelection.toUpperCase();
+            let cs = computerSelection.toUpperCase();
+            console.log(ps);
+            //Tie
             if (playerSelection === computerSelection){
                 return 'It\'s a tie! Both picked ${playerSelection}'
             }
+            //Rock
             if (playerSelection == "Rock") {
-                
-            } else {
-            
+                if (computerSelection == "Scissors") {
+                    return 'You win! Rock beats scissors'
+                } else {
+                    return 'You lose! Paper beats Rock'
+                }
+            }
+            //Paper
+            if (playerSelection == "Paper") {
+                if (computerSelection == "Rock") {
+                    return 'You win! Paper beats Rock'
+                } else {
+                    return 'You lose! Scissors beats Paper'
+                }
+            }
+            //Scissors
+            if (playerSelection == "Scissors") {
+                if (computerSelection == "Paper") {
+                    return 'You win! Scissors beats Paper'
+                } else {
+                    return 'You lose! Rock beats Scissors'
+                }
             }
         }
     </script>
