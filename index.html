@@ -13,10 +13,14 @@
             return choices[~~(Math.random() * choices.length)];
         }
         function playRound(playerSelection, computerSelection) {
-            if (condition) {
+            //Rock
+            if (playerSelection === computerSelection){
+                return 'It\'s a tie! Both picked ${playerSelection}'
+            }
+            if (playerSelection == "Rock") {
                 
             } else {
-                
+            
             }
         }
     </script>
