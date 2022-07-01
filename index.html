@@ -17,31 +17,31 @@
             let cs = computerSelection.toUpperCase();
             console.log(ps);
             //Tie
-            if (playerSelection === computerSelection){
-                return 'It\'s a tie! Both picked ${playerSelection}'
+            if (ps === cs){
+                return 'It\'s a tie! Both picked ${playerSelection}';
             }
             //Rock
-            if (playerSelection == "Rock") {
-                if (computerSelection == "Scissors") {
-                    return 'You win! Rock beats scissors'
+            if (ps == "ROCK") {
+                if (cs == "SCISSORS") {
+                    return 'You win! Rock beats scissors';
                 } else {
-                    return 'You lose! Paper beats Rock'
+                    return 'You lose! Paper beats Rock';
                 }
             }
             //Paper
-            if (playerSelection == "Paper") {
-                if (computerSelection == "Rock") {
-                    return 'You win! Paper beats Rock'
+            if (ps == "PAPER") {
+                if (cs == "ROCK") {
+                    return 'You win! Paper beats Rock';
                 } else {
-                    return 'You lose! Scissors beats Paper'
+                    return 'You lose! Scissors beats Paper';
                 }
             }
             //Scissors
-            if (playerSelection == "Scissors") {
-                if (computerSelection == "Paper") {
-                    return 'You win! Scissors beats Paper'
+            if (ps == "SCISSORS") {
+                if (cs == "PAPER") {
+                    return 'You win! Scissors beats Paper';
                 } else {
-                    return 'You lose! Rock beats Scissors'
+                    return 'You lose! Rock beats Scissors';
                 }
             }
         }
