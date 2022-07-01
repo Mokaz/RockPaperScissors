@@ -15,10 +15,10 @@
         function playRound(playerSelection, computerSelection) {
             let ps = playerSelection.toUpperCase();
             let cs = computerSelection.toUpperCase();
-            console.log(ps);
+            console.log(ps + " vs " + cs);
             //Tie
             if (ps === cs){
-                return 'It\'s a tie! Both picked ${playerSelection}';
+                return "It's a tie! Both picked " + cs;
             }
             //Rock
             if (ps == "ROCK") {
@@ -45,6 +45,10 @@
                 }
             }
         }
+
+        const playerSelection = "rock";
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
     </script>
 </body>
 </html>
