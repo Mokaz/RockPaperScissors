@@ -7,6 +7,16 @@
     <title>Rock Paper Scissors!</title>
 </head>
 <body>
+    <div class="buttons">
+        <button class="btn" id="rockBtn">ROCK</button>
+        <button class="btn" id="paperBtn">PAPER</button>
+        <button class="btn" id="scissorsBtn">SCISSORS</button>
+    </div>
+    <div class="results">
+        <h3 id="resultMessage">Choose your weapon!</h3>
+    </div>
+
+
     <script>
         const choices = ["Rock", "Paper", "Scissors"]
         function computerPlay(){
@@ -18,12 +28,12 @@
             console.log(ps + " vs " + cs);
             //Tie
             if (ps === cs){
-                return "It's a tie! Both picked " + cs;
+                return "It's a tie! Both picked " + computerSelection;
             }
             //Rock
             if (ps == "ROCK") {
                 if (cs == "SCISSORS") {
-                    return 'You win! Rock beats scissors';
+                    return 'You win! Rock beats Scissors';
                 } else {
                     return 'You lose! Paper beats Rock';
                 }
@@ -45,14 +55,29 @@
                 }
             }
         }
+
         function game() {
-            for (let i = 0; i < 5; i++) {
+            while (true) {
                 let player = prompt("Choose a weapon: ");
                 console.log(playRound(player, computerPlay()));
             }
         }
 
-        game();
+        function updateResult(string) {
+            resultTxt.textContent = string;
+        }
+
+        //UI
+        const rockBtn = document.getElementById('rockBtn')
+        const paperBtn = document.getElementById('paperBtn')
+        const scissorsBtn = document.getElementById('scissorsBtn')
+        const resultTxt = document.getElementById('resultMessage')
+
+        rockBtn.addEventListener('click', () => updateResult(playRound("ROCK", computerPlay())))
+        paperBtn.addEventListener('click', () => updateResult(playRound("PAPER", computerPlay())))
+        scissorsBtn.addEventListener('click', () => updateResult(playRound("SCISSORS", computerPlay())))
+
+
     </script>
 </body>
 </html>
