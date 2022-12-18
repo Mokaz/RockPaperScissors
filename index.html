@@ -37,6 +37,7 @@
             if (ps == "ROCK") {
                 if (cs == "SCISSORS") {
                     playerScore++;
+                    console.log(playerScore);
                     return 'You win! Rock beats Scissors';
                 } else {
                     computerScore++;
@@ -74,7 +75,7 @@
 
         function updateResult(string) {
             resultTxt.textContent = string;
-            scoreTxt.textContent = "Player: ";
+            scoreTxt.textContent = "Player: "  + playerScore + " - Computer: " + computerScore;
         }
 
         //UI
