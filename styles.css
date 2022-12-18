@@ -1,0 +1,35 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background:linear-gradient(90deg, Red, Orange, Yellow, Green, Blue, Indigo,violet);
+    width:500px;
+    height:500px;
+  }
+
+button {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+  }
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}

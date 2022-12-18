@@ -4,30 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
     <title>Rock Paper Scissors!</title>
 </head>
 <body>
+    <div class="results">
+        <h3 id="resultMessage">Choose your weapon!</h3>
+    </div>
     <div class="buttons">
         <button class="btn" id="rockBtn">ROCK</button>
         <button class="btn" id="paperBtn">PAPER</button>
         <button class="btn" id="scissorsBtn">SCISSORS</button>
     </div>
-    <div class="results">
-        <h3 id="resultMessage">Choose your weapon!</h3>
+    <div class="score">
         <h3 id="score">Player: 0 - Computer: 0</h3>
     </div>
 
 
     <script>
         const choices = ["Rock", "Paper", "Scissors"]
+        let playerScore = 0;
+        let computerScore = 0;
+        let game_ended = 0;
         function computerPlay(){
             return choices[~~(Math.random() * choices.length)];
         }
         function playRound(playerSelection, computerSelection) {
             let ps = playerSelection.toUpperCase();
             let cs = computerSelection.toUpperCase();
-            let playerScore = 0;
-            let computerScore = 0;
             console.log(playerScore);
             console.log(ps + " vs " + cs);
             //Tie
@@ -75,8 +79,22 @@
         }
 
         function updateResult(string) {
-            resultTxt.textContent = string;
-            scoreTxt.textContent = "Player: "  + playerScore + " - Computer: " + computerScore;
+            if (!game_ended) {
+                resultTxt.textContent = string;
+                scoreTxt.textContent = 'Player: '  + playerScore + ' - Computer: ' + computerScore;
+            }
+            if (playerScore == 5 || computerScore == 5) {
+                game_ended = 1;
+                endGame();
+            } 
+        }
+
+        function endGame() {
+            if (playerScore > computerScore) {
+                resultTxt.textContent = 'Game over! You win!';
+            } else {
+                resultTxt.textContent = 'Game over! You lose!';
+            }
         }
 
         //UI
